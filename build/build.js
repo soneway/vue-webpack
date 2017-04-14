@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const webpackConf = require('./webpack.prod.conf');
+const webpackConf = require('./webpack.dev.conf');
 const ora = require('ora');
 
 const spinner = ora('构建中...');
