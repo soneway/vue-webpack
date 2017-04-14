@@ -2,11 +2,12 @@ const webpack = require('webpack');
 const webpackConf = require('./webpack.prod.conf');
 const ora = require('ora');
 
-const spinner = ora('building prod...');
+const spinner = ora('构建中...');
 spinner.start();
 
+console.log('开始构建');
 webpack(webpackConf, (err) => {
   spinner.stop();
   if (err) throw err;
-  console.log('bild success');
+  console.log('构建成功');
 });
