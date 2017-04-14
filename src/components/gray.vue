@@ -2,7 +2,7 @@
     <div class="wrapper" :style="{height: height}">
         <!--<text>{{debugInfo}}</text>-->
         <div class="imageWrap" :style="{height: height}" @click="redirect">
-            <image class="image" :src="imgSrc" :style="{width: width, height: height}"></image>
+            <img class="image" :src="imgSrc" :style="{width: width, height: height}" />
             <div class="nightMask" :style="+themeType === 1 && {visibility: 'visible'}"></div>
         </div>
     </div>
@@ -25,21 +25,8 @@
 </style>
 
 <script>
-  const weexRequire = weex.requireModule || weex.require;
-
-  // 事件
-  const event = weexRequire('event');
-  // uc事件
-  const ucEvent = weexRequire('uc-event');
-
-  // 配置项
-  const config = weex.config;
-  // uc配置
-  const ucConfig = config.uc || {};
-  // uc环境
-  const ucEnv = ucConfig.env || {};
   // 初始屏幕宽度
-  const winWidth = ucEnv.windowWidth || 750;
+  const winWidth = 750;
 
   // 图片数据
   const imgs = [
@@ -63,7 +50,6 @@
     },
     props: {
       themeType: {
-        type: String,
         default: undefined
       }
     },
@@ -71,17 +57,7 @@
       // 初始化定时器(5分钟换1次图)
       setInterval(() => {
         this.changeImgSrc();
-      }, 5 * 60 * 1000);
-
-      if (ucEvent) {
-        // 切换横屏(只有iOS有)
-        ucEvent.addEventListener('orientationChange', (param = null) => {
-          const screen = JSON.parse(param) || {};
-          const width = screen.width;
-          // 重置图片尺寸信息
-          width && this.setSize(width);
-        });
-      }
+      }, 5 * 1000);
     },
     methods: {
       // 设置尺寸
@@ -91,7 +67,7 @@
       },
       // 跳转
       redirect() {
-        event.openURL(this.url);
+        location.href = this.url;
       },
       // 改变图片
       changeImgSrc() {
