@@ -19,10 +19,6 @@ function getEntry(entryDir) {
 
 module.exports = {
   entry: getEntry(path.join(__dirname, '../src/entries')),
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: '[name].js'
-  },
   module: {
     loaders: [
       {
