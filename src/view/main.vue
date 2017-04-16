@@ -1,5 +1,8 @@
 <template>
-    <gray v-if="!!styleId" :themeType="themeType"></gray>
+    <div>
+        <gray v-if="styleId===2" :themeType="themeType"></gray>
+        <scss></scss>
+    </div>
 </template>
 
 <style scoped>
@@ -8,9 +11,13 @@
 <script>
   // 灰度卡片
   import Gray from '../components/gray.vue';
+  import Scss from '../components/scss.vue';
 
   export default {
-    components: {Gray},
+    components: {
+      Gray,
+      Scss
+    },
     data() {
       return {
         // 卡片id

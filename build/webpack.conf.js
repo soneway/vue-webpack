@@ -17,6 +17,27 @@ function getEntry(entryDir) {
     }, {});
 }
 
+function getCssLoaders() {
+  return {
+    scss: [
+      'vue-style-loader',
+      {
+        loader: 'css-loader',
+        options: {
+          minimize: false,
+          sourceMap: true
+        }
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: true
+        }
+      }
+    ]
+  }
+}
+
 module.exports = {
   entry: getEntry(path.join(__dirname, '../src/entries')),
   module: {
@@ -28,7 +49,10 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          loaders: getCssLoaders()
+        }
       }
     ]
   }
