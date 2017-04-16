@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 // 基础配置
-const webpackConf = require('./webpack.conf');
+const webpackConf = require('./webpack.base.conf');
 
 // dev配置
 module.exports = webpackMerge(webpackConf, {
