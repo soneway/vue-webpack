@@ -39,7 +39,7 @@ function getCssLoaders() {
 }
 
 module.exports = {
-  entry: getEntry(path.join(__dirname, '../src/entries')),
+  entry: getEntry(path.join(__dirname, '../src/entry')),
   module: {
     loaders: [
       {

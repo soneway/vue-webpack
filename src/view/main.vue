@@ -10,8 +10,8 @@
 
 <script>
   // 灰度卡片
-  import Gray from '../components/gray.vue';
-  import Scss from '../components/scss.vue';
+  import Gray from '../component/gray.vue';
+  import Scss from '../component/scss.vue';
 
   export default {
     components: {
