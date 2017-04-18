@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const webpackConf = require('./webpack.dev.conf');
 const ora = require('ora');
+const express = require('express');
 
 console.log('<<<开始构建<<<');
 const spinner = ora('构建中...');
@@ -22,4 +23,11 @@ webpack(webpackConf, (err, stats) => {
     });
   }
   console.log('构建成功');
+});
+
+// server
+const app = express();
+app.use(express.static('../dev'));
+app.listen('8080', () => {
+  console.log('请访问: localhost:8080');
 });
