@@ -27,7 +27,7 @@ webpack(webpackConf, (err, stats) => {
 
 // server
 const app = express();
-app.use(express.static('../dev'));
+app.use(express.static('dev'));
 app.listen('8080', () => {
   console.log('请访问: localhost:8080');
 });

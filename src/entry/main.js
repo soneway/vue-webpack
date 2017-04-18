@@ -1,4 +1,3 @@
-// import Vue from 'vue';
 import Main from '../view/main.vue';
 
 Main.el = '#root';
