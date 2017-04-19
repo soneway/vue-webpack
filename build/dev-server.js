@@ -7,6 +7,7 @@ console.log('<<<开始构建<<<');
 const spinner = ora('构建中...');
 spinner.start();
 
+// 构建
 webpack(webpackConf, (err, stats) => {
   spinner.stop();
 
