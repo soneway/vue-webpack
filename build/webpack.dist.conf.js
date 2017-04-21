@@ -8,6 +8,7 @@ const webpackConf = require('./webpack.base.conf');
 // html模板
 const templates = srcHelper.getTemplate();
 const templatePlugins = templates.map((item) => {
+  item.minify = true;
   return new HtmlWebpackPlugin(item);
 });
 
@@ -15,8 +16,8 @@ const templatePlugins = templates.map((item) => {
 module.exports = webpackMerge(webpackConf, {
   watch: true,
   output: {
-    path: path.join(__dirname, '../dev'),
-    filename: '[name].js'
+    path: path.join(__dirname, '../dist'),
+    filename: '[name].[chunck].js'
   },
   plugins: [
     ...templatePlugins

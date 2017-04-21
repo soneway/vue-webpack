@@ -7,8 +7,9 @@
     "webpack"
   ],
   "scripts": {
-    "dev": "node build/dev-server.js",
-    "debug": "",
+    "dev": "webpack --watch --config ./build/webpack.dev.conf.js",
+    "dist": "webpack --config ./build/webpack.dist.conf.js",
+    "serv": "node ./build/dev-server.js",
     "release": ""
   },
   "dependencies": {
