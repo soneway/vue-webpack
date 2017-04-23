@@ -77,5 +77,5 @@
         this.imgSrc = imgs[index];
       }
     }
-  }
+  };
 </script>

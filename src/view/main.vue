@@ -28,5 +28,5 @@
     },
     created() {
     }
-  }
+  };
 </script>
