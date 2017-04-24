@@ -29,7 +29,7 @@ const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
   }
 });
 
-// dist配置
+// prod配置
 module.exports = webpackMerge(webpackConf, {
   output: {
     path: path.join(__dirname, '../prod'),
