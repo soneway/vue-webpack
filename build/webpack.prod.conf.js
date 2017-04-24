@@ -23,11 +23,7 @@ const templatePlugins = templates.map((item) => {
 });
 
 // js压缩
-const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
-  compress: {
-    warnings: true
-  }
-});
+const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin();
 
 // prod配置
 module.exports = webpackMerge(webpackConf, {
