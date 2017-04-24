@@ -31,9 +31,8 @@ const uglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 
 // dist配置
 module.exports = webpackMerge(webpackConf, {
-  watch: true,
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: path.join(__dirname, '../prod'),
     filename: '[name].[chunkhash].js'
   },
   plugins: [

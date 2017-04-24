@@ -1,5 +1,5 @@
 .idea
 node_modules
 dev
-dist
+prod
 npm-debug.log
